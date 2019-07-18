@@ -19,21 +19,20 @@ public class boss
         this.hp -= damage;
     }
 
-    public int magic()
+    public void magic()
     {
-        int sparemp = mp -= 5;
+        if (mp >= 5)
+        {
+             mp -= 5;
 
-        Debug.Log("魔法攻撃を行った。残りMPは" + sparemp);
+            Debug.Log("魔法攻撃を行った。残りMPは" + mp);
 
-        if (sparemp < 5)
+        }
+
+        else if (mp < 5)
         {
             Debug.Log("魔法を使うことができない");
         }
-
-        return sparemp;
-        
-
-
 
         
     }
@@ -49,7 +48,7 @@ public class Boss : MonoBehaviour
         lastboss.Attack();
         lastboss.defense(3);
 
-        for (int a = 0; a < 10; a++)
+        for (int a = 0; a < 11; a++)
         {
             lastboss.magic();
         }

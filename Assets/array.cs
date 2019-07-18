@@ -14,7 +14,7 @@ public class array : MonoBehaviour
             Debug.Log(point[i]);
         }
 
-            for(int j = 5; j > 0; j--)
+            for(int j = point.Length - 1; 0 <= j; j--)
         {
             Debug.Log(point[j]);
         }
